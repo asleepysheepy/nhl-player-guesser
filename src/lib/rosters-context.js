@@ -18,6 +18,7 @@ function useRosters() {
           players: team.roster.roster.map((player) => ({
             id: player.person.id,
             name: player.person.fullName,
+            teamId: team.id,
           })),
         })),
       })

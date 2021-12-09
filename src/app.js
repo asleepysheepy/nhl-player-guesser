@@ -1,6 +1,7 @@
 import React, { StrictMode } from 'react'
 import { ErrorBoundary, Layout } from './components'
-import { RostersContextProvider } from './contexts'
+import { Guesser } from './components/guesser'
+import { RostersContextProvider } from './lib'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <ErrorBoundary>
         <RostersContextProvider>
           <Layout>
-            <h1>Hello World!</h1>
+            <Guesser />
           </Layout>
         </RostersContextProvider>
       </ErrorBoundary>
