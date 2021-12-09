@@ -99,6 +99,7 @@ module.exports = {
       'reservedFirst': false,
     }],
     'react/sort-prop-types': ['error', { 'ignoreCase': true }],
+    'react/prop-types': 'off',
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
