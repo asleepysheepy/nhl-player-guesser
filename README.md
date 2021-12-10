@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# NHL Player Guesser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Test how well you can recognise NHL players by their headshots. 
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [Bug reports](#bug-reports)
+* [Developing](#developing)
+  * [Dependencies and frameworks](#dependencies-and-frameworks)
+  * [Requirements](#requirements)
+  * [Running for local development](#running-for-local-development)
+  * [Useful Scripts and Commands](#useful-scripts-and-commands)
+* [Deploying](#deploying)
+* [License](#license)
+* [Disclaimers](#disclaimers)
 
-### `pnmp start`
+## Bug reports
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Please report bugs by opening an [issue](https://github.com/asleepysheepy/nhl-player-guesser/issues) on GitHub.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Developing
 
-### `pnmp test`
+### Dependencies and frameworks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [React](https://reactjs.org/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [Create React App](https://create-react-app.dev/)
 
-### `pnmp build`
+## Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Node.js](https://nodejs.org/) 14.0 or higher
+* [PNPM](https://pnpm.io/) 6.22.0 or higher
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running for local development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<ol>
+  <li>
+    clone the repo and move into the directory
+    <br>
+    <pre>$ git clone https://github.com/asleepysheepy/dops-tracker.git && cd dops-tracker</pre>
+  </li>
+  <li>
+    Install JavaScript dependencies with Yarn 
+    <br>
+    <pre>$ pnpm install</pre>
+  </li>
+  <li>
+    Start the application
+    <br>
+    <pre>$ pnpm start</pre>
+  </li>
+</ol>
 
-### `pnmp eject`
+### Useful Scripts and Commands
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* `pnpm start` - Runs the app in the development mode.
+* `pnpm build` - Builds the app for production to the `build` folder.
+* `pnpm lint` - Runs eslint over the projects files
+* `pnpm lint-fix` - Runs eslint over the projects files and fixes errors
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploying
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**TODO**: Write this
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/asleepysheepy/nhl-player-guesser/blob/main/LICENSE) file for details
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Disclaimers
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `pnmp build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+NHL Player Guesser is not in any way affiliated with the National Hockey League (NHL) or any of its respective teams. The NHL logo, team logos, team names, and other trademarks are the property of their respective owners. If you are the owner of a trademark that is used on this website and would like it removed, please contact us.
