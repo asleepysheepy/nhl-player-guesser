@@ -21,7 +21,7 @@ export function SidebarItem({ item }) {
 
   const handleOnClick = () => {
     if (item.name === 'National Hockey League') {
-      updateGameState({ type: 'reset' })
+      updateGameState({ type: 'setDefault' })
     } else {
       updateGameState({
         type: 'setTeam',
