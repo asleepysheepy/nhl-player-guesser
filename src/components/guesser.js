@@ -16,10 +16,7 @@ export function Guesser() {
 
   const onResetPress = () => { updateGameState({ type: 'reset' }) }
   const onSubmitPress = () => {
-    const payload = {
-      playerId: currentPlayer.id,
-      teamId: currentPlayer.teamId,
-    }
+    const payload = { playerId: currentPlayer.id, teamId: currentPlayer.teamId }
 
     if (currentPlayer.name === guessedPlayer) {
       updateGameState({ type: 'correctGuess', payload})
