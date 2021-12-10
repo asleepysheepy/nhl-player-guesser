@@ -1,4 +1,7 @@
-import { useReducer } from 'react'
+
+import React, { createContext, useContext, useReducer } from 'react'
+
+const GameStateContext = createContext()
 
 const initialState = {
   team: 'league',
@@ -10,6 +13,7 @@ const initialState = {
 }
 
 function reducer(state, action) {
+
   switch (action.type) {
   case 'reset':
     return {
@@ -31,15 +35,15 @@ function reducer(state, action) {
   case 'correctGuess':
     return {
       ...state,
-      correct: state.correct++,
-      completed: state.completed++,
+      correct: state.correct + 1,
+      completed: state.completed + 1,
       playersIncluded: [...state.playersIncluded, action.payload.playerId],
       teamsIncluded: [...state.teamsIncluded, action.payload.teamId],
     }
   case 'incorrectGuess':
     return {
       ...state,
-      completed: state.completed++,
+      completed: state.completed + 1,
       playersIncluded: [...state.playersIncluded, action.payload.playerId],
       teamsIncluded: [...state.teamsIncluded, action.payload.teamId],
     }
@@ -48,11 +52,16 @@ function reducer(state, action) {
   }
 }
 
-export function useGameState() {
+export function useGameStateContext() {
+  return useContext(GameStateContext)
+}
+
+export function GameStateContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  return {
-    gameState: state,
-    updateGameState: dispatch,
-  }
+  return (
+    <GameStateContext.Provider value={{ gameState: state, updateGameState: dispatch }}>
+      {children}
+    </GameStateContext.Provider>
+  )
 }

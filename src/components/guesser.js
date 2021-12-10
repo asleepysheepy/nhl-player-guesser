@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Loader, TextInput } from '.'
-import { getNextPlayer, useGameState, useRostersContext } from '../lib'
+import { Button, TextInput } from '.'
+import { getNextPlayer, useGameStateContext, useRostersContext } from '../lib'
 
 export function Guesser() {
-  const { rosters, loading, error } = useRostersContext()
-  const { gameState, updateGameState } = useGameState()
+  const { rosters } = useRostersContext()
+  const { gameState, updateGameState } = useGameStateContext()
   const [guessedPlayer, setGuessedPlayer] = useState('')
 
   const [currentPlayer, setCurrentPlayer] = useState()
-  useEffect(() => { setCurrentPlayer(getNextPlayer(rosters, gameState)) }, [rosters, gameState])
+  useEffect(() => {
+    if (gameState.completed === gameState.total) { return }
+
+    setCurrentPlayer(getNextPlayer(rosters, gameState))
+  }, [rosters, gameState])
 
   const onResetPress = () => { updateGameState({ type: 'reset' }) }
   const onSubmitPress = () => {
@@ -26,19 +30,10 @@ export function Guesser() {
     setGuessedPlayer('')
   }
 
-  if (loading) { return <Loader /> }
-  if (error) { throw new Error() }
   if (!rosters.teams) { return null }
 
   return (
-    <div className={'flex flex-col items-center'}>
-      <h1 className={' my-4 text-5xl font-semibold text-gray-900 dark:text-white'}>NHL Player Guesser</h1>
-
-      <div className={'my-3 flex flex-col items-center'}>
-        <p>{`${gameState.completed}/${gameState.total} completed`}</p>
-        <p>{`${gameState.correct}/${gameState.completed} correct`}</p>
-      </div>
-
+    <>
       <img
         alt={`${currentPlayer?.name} headshot`}
         src={`https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${currentPlayer?.id}@2x.jpg`}
@@ -64,6 +59,6 @@ export function Guesser() {
           <Button onClick={onResetPress} variant={'secondary'}>Reset</Button>
         </div>
       </form>
-    </div>
+    </>
   )
 }

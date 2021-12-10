@@ -1,16 +1,18 @@
 import React, { StrictMode } from 'react'
 import { ErrorBoundary, Layout } from './components'
-import { Guesser } from './components/guesser'
-import { RostersContextProvider } from './lib'
+import { GameStateContextProvider, RostersContextProvider } from './lib'
+import { HomePage } from './pages/home'
 
 function App() {
   return (
     <StrictMode>
       <ErrorBoundary>
         <RostersContextProvider>
-          <Layout>
-            <Guesser />
-          </Layout>
+          <GameStateContextProvider>
+            <Layout>
+              <HomePage />
+            </Layout>
+          </GameStateContextProvider>
         </RostersContextProvider>
       </ErrorBoundary>
     </StrictMode>
