@@ -18,7 +18,7 @@ export function Guesser() {
   const onSubmitPress = () => {
     const payload = { playerId: currentPlayer.id, teamId: currentPlayer.teamId }
 
-    if (currentPlayer.name === guessedPlayer) {
+    if (currentPlayer.name.toLowerCase() === guessedPlayer.toLowerCase()) {
       updateGameState({ type: 'correctGuess', payload})
     } else {
       updateGameState({ type: 'incorrectGuess', payload})
