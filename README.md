@@ -29,7 +29,7 @@ Please report bugs by opening an [issue](https://github.com/asleepysheepy/nhl-pl
 ## Requirements
 
 * [Node.js](https://nodejs.org/) 14.0 or higher
-* [PNPM](https://pnpm.io/) 6.22.0 or higher
+* [Yarn](https://yarnpkg.com/)
 
 ### Running for local development
 
@@ -42,21 +42,21 @@ Please report bugs by opening an [issue](https://github.com/asleepysheepy/nhl-pl
   <li>
     Install JavaScript dependencies with Yarn 
     <br>
-    <pre>$ pnpm install</pre>
+    <pre>$ yarn install</pre>
   </li>
   <li>
     Start the application
     <br>
-    <pre>$ pnpm start</pre>
+    <pre>$ yarn start</pre>
   </li>
 </ol>
 
 ### Useful Scripts and Commands
 
-* `pnpm start` - Runs the app in the development mode.
-* `pnpm build` - Builds the app for production to the `build` folder.
-* `pnpm lint` - Runs eslint over the projects files
-* `pnpm lint-fix` - Runs eslint over the projects files and fixes errors
+* `yarn start` - Runs the app in the development mode.
+* `yarn build` - Builds the app for production to the `build` folder.
+* `yarn lint` - Runs eslint over the projects files
+* `yarn lint-fix` - Runs eslint over the projects files and fixes errors
 
 ## Deploying
 
