@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '.'
+import { CheckIcon, XIcon } from '@heroicons/react/solid'
 import { useGameStateContext, useRostersContext } from '../lib'
 
 function TeamInfo({ rosters, teamId, gameType }) {
@@ -46,7 +47,14 @@ export function Finished() {
               </div>
               <div className={'pt-2 sm:grid sm:grid-cols-5 sm:gap-4 sm:px-2'}>
                 <dt className={'text-sm font-semibold text-gray-600 dark:text-gray-400'}>Guess</dt>
-                <dd className={'mt-1 text-sm sm:mt-0 sm:col-span-4'}>{entry.guess}</dd>
+                <dd className={'mt-1 text-sm sm:mt-0 sm:col-span-4 flex'}>
+                  <span className={'pr-1'}>{entry.guess}</span>
+                  {
+                    entry.correct
+                      ? <CheckIcon className={'text-green-500 block w-5 h-5'} />
+                      : <XIcon className={'text-red-500 block w-5 h-5'} />
+                  }
+                </dd>
               </div>
             </dl>
           </li>
