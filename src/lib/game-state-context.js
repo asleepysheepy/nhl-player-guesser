@@ -8,8 +8,7 @@ const initialState = {
   total: 32,
   correct: 0,
   completed: 0,
-  playersIncluded: [],
-  teamsIncluded: [],
+  entries: [],
 }
 
 function reducer(state, action) {
@@ -22,8 +21,7 @@ function reducer(state, action) {
       ...state,
       correct: 0,
       completed: 0,
-      playersIncluded: [],
-      teamsIncluded: [],
+      entries: [],
     }
   case 'setTeam':
     return {
@@ -31,23 +29,20 @@ function reducer(state, action) {
       total: action.payload.team.players.length,
       correct: 0,
       completed: 0,
-      playersIncluded: [],
-      teamsIncluded: [],
+      entries: [],
     }
   case 'correctGuess':
     return {
       ...state,
       correct: state.correct + 1,
       completed: state.completed + 1,
-      playersIncluded: [...state.playersIncluded, action.payload.playerId],
-      teamsIncluded: [...state.teamsIncluded, action.payload.teamId],
+      entries: [...state.entries, action.payload],
     }
   case 'incorrectGuess':
     return {
       ...state,
       completed: state.completed + 1,
-      playersIncluded: [...state.playersIncluded, action.payload.playerId],
-      teamsIncluded: [...state.teamsIncluded, action.payload.teamId],
+      entries: [...state.entries, action.payload],
     }
   default:
     throw new Error()

@@ -2,13 +2,13 @@ export function getNextPlayer(rosters, gameState) {
   if (!rosters.teams) { return null }
 
   if (gameState.team === 'league') {
-    const team = getUniqueItem(rosters.teams, gameState.teamsIncluded)
-    return getUniqueItem(team.players, gameState.playersIncluded)
+    const team = getUniqueItem(rosters.teams, gameState.entries.map((i) => i.teamId))
+    return getUniqueItem(team.players, gameState.entries.map((i) => i.playerId))
   } else {
     const team = rosters.teams.find((t) => t.name === gameState.team)
     if (!team) { throw new Error() }
 
-    return getUniqueItem(team.players, gameState.playersIncluded)
+    return getUniqueItem(team.players, gameState.entries.map((i) => i.playerId))
   }
 }
 

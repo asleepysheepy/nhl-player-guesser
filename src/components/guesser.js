@@ -18,12 +18,17 @@ export function Guesser() {
   const onSubmitPress = () => {
     if (guessedPlayer === '') { return }
 
-    const payload = { playerId: currentPlayer.id, teamId: currentPlayer.teamId }
+    const payload = {
+      playerId: currentPlayer.id,
+      teamId: currentPlayer.teamId,
+      playerName: currentPlayer.name,
+      guess: guessedPlayer,
+    }
 
     if (currentPlayer.name.toLowerCase() === guessedPlayer.toLowerCase()) {
-      updateGameState({ type: 'correctGuess', payload})
+      updateGameState({type: 'correctGuess', payload: {...payload, correct: true}})
     } else {
-      updateGameState({ type: 'incorrectGuess', payload})
+      updateGameState({type: 'incorrectGuess', payload: {...payload, correct: false}})
     }
 
     setGuessedPlayer('')
@@ -32,7 +37,7 @@ export function Guesser() {
   if (!rosters.teams) { return null }
 
   return (
-    <>
+    <main>
       <img
         alt={`${currentPlayer?.name} headshot`}
         src={`https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${currentPlayer?.id}@2x.jpg`}
@@ -58,6 +63,6 @@ export function Guesser() {
           <Button onClick={onResetPress} variant={'secondary'}>Reset</Button>
         </div>
       </form>
-    </>
+    </main>
   )
 }
