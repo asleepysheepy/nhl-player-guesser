@@ -21,7 +21,7 @@ export function Finished() {
 
   return (
     <main>
-      <h2 className={'text-3xl font-semibold text-gray-900 dark:text-white'}>
+      <h2 className={'text-3xl font-semibold text-gray-900 dark:text-white text-center'}>
         {'Congratulations, you\'ve finished'}
       </h2>
       <div className={'my-4 text-center'}>
